@@ -183,7 +183,7 @@ ANSI_RESET="\001$(git config --get-color "" "reset")\002"
 
 # detect whether the tree is in a dirty state.
 _git_dirty() {
-	if ! git rev-parse --verify HEAD >/dev/null 2>&1; then
+	if ! git rev-parse >/dev/null 2>&1; then
 		return 0
 	fi
 	local dirty_marker="`git config gitsh.dirty 2>/dev/null || echo ' *'`"
